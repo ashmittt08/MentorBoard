@@ -29,7 +29,7 @@ This pattern is implemented in `src/features/tasks/KanbanBoard.tsx` in the `hand
 | Vite | Build tool + dev server |
 | Tailwind CSS | Utility-first styling |
 | Zustand (persist) | State management + localStorage |
-| React Router v6 | Client-side routing |
+| React Router v7 | Client-side routing |
 | @dnd-kit | Kanban drag-and-drop |
 | React Hook Form + Zod | Forms + validation |
 | Recharts | Analytics charts |
@@ -62,6 +62,14 @@ npm run build     # Production build
 npm run test      # Run tests
 npm run preview   # Preview production build
 ```
+
+## Known Limitations
+
+- No backend: all state is persisted in localStorage, so data is device/browser-specific.
+- Authentication is mocked with demo accounts; no real auth provider or token-based security.
+- Current tests cover core UI flows, but not all edge cases (for example, full drag-and-drop interaction and all analytics scenarios).
+- Production build currently emits a large JS bundle warning; route-level code splitting can improve this.
+- `npm audit` reports moderate vulnerabilities in the Vite/esbuild dev toolchain; avoid exposing the dev server publicly and plan dependency upgrades.
 
 ## Demo Accounts
 
